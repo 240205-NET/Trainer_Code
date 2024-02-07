@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Xml.Serialization;
 
 namespace Serializer
 {
@@ -35,53 +36,20 @@ namespace Serializer
                 switch(choice)
                 {
                     case "1": // if (choice == "1")
-                        Console.WriteLine("Reading from file...");
-                        // read from the file
-                        if(File.Exists(path))
-                        {
-                            string[] readText = File.ReadAllLines(path);
-                            foreach (string s in readText)
-                            {
-                                Console.WriteLine(s);
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine("File Not Found");
-                        }
+                        ReadFile(path);
                         break;
 
                     case "2":
-                        // display/confirm the object
-                        Console.WriteLine(Lawrence.ToString());
-
-                        // save to a file as text
-                        Console.WriteLine("Writing to file...");
-                        string[] text = {Lawrence.ToString()};
-
-                        if( File.Exists(path))
-                        {
-                            File.AppendAllLines(path,text);
-                        }
-                        else
-                        {
-                            File.WriteAllLines(path, text); // WriteAllLines requires an IEnumerable (a collection) of strings
-                        // File.WriteLine(path, <string>); // WriteLine will operate on a single string
-                        }
+                        WriteFile(Lawrence, path);
                         break;
 
                     case "3":
-                        // convert/serialize the object
-                        Console.WriteLine(Lawrence.SerializeXML());
-
-                        // save the serialized object to a file
-                        string[] text1 = {Lawrence.SerializeXML()};
-                        File.WriteAllLines(path, text1);
-
+                        Serialize(Lawrence, path);
                         break;
 
                     case "4":
-                        // Read a serialized object back in
+                        Person NewGuy = DeserializeXML(path);
+                        Console.WriteLine(NewGuy.ToString());
                         break;
 
                     case "0":
@@ -93,6 +61,80 @@ namespace Serializer
                         break;
                 }
             }
+        }
+        
+        static void WriteFile(Person Lawrence, string path)
+        {
+            // display/confirm the object
+            Console.WriteLine(Lawrence.ToString());
+
+            // save to a file as text
+            Console.WriteLine("Writing to file...");
+            string[] text = {Lawrence.ToString()};
+
+            if( File.Exists(path))
+            {
+                File.AppendAllLines(path,text);
+            }
+            else
+            {
+                File.WriteAllLines(path, text); // WriteAllLines requires an IEnumerable (a collection) of strings
+            // File.WriteLine(path, <string>); // WriteLine will operate on a single string
+            }
+        }
+
+        static void ReadFile(string path)
+        {
+            Console.WriteLine("Reading from file...");
+            // read from the file
+            if(File.Exists(path))
+            {
+                string[] readText = File.ReadAllLines(path);
+                foreach (string s in readText)
+                {
+                    Console.WriteLine(s);
+                }
+            }
+            else
+            {
+                Console.WriteLine("File Not Found");
+            }
+        }
+
+        static void Serialize(Person Lawrence, string path)
+        {
+            // convert/serialize the object
+            Console.WriteLine(Lawrence.SerializeXML());
+
+            // save the serialized object to a file
+            string[] text1 = {Lawrence.SerializeXML()};
+            File.WriteAllLines(path, text1);
+        }
+
+        static Person DeserializeXML(string path)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(Person));
+            Person P = new Person();
+            if (!File.Exists(path))
+            {
+                Console.WriteLine("File Not Found");
+                return null;
+            }
+            else
+            {
+                using StreamReader reader = new StreamReader(path);
+                var record = (Person)serializer.Deserialize(reader);
+                if (record is null)
+                {
+                    throw new InvalidDataException();
+                    return null;
+                }
+                else
+                {
+                    P = record;
+                }
+            }
+            return P;
         }
     }
 }
