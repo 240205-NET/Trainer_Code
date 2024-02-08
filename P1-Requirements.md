@@ -5,3 +5,7 @@
 - Your project must have multiple classes, including at least one abstract class.
 - Your project must read and write from and to a file.
 - Your project must serialize an object.
+
+Requirement Update - 2/8
+- Your project must have at least ten unit tests. 
+- Your unit tests should check at least 4 different methods from your application project.

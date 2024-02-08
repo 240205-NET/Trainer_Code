@@ -20,6 +20,5 @@ namespace Banking
 
             Console.WriteLine(secondAccount.DisplayTransactionHistory());
         }
-
     }
 }
