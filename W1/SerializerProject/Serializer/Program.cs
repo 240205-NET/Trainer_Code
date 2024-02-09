@@ -29,6 +29,7 @@ namespace Serializer
                 Console.WriteLine("2: Write to file.");
                 Console.WriteLine("3: Create Xml Record");
                 Console.WriteLine("4: Read from Xml Record");
+                Console.WriteLine("5: Parse string to ints");
                 Console.WriteLine("0: Exit.");
 
                 string? choice = Console.ReadLine(); // the "?" makes it nullable
@@ -50,6 +51,20 @@ namespace Serializer
                     case "4":
                         Person NewGuy = DeserializeXML(path);
                         Console.WriteLine(NewGuy.ToString());
+                        break;
+
+                    case "5":
+                        Console.WriteLine("Please enter a number to be parsed from a string to an int: ");
+                        string input = Console.ReadLine();
+                        try
+                        {
+                            int result = TextToNumber(input);
+                            Console.WriteLine("Resulted in a type of: " + result.GetType() + " with a value of: " + result);
+                        }
+                        catch(Exception e)
+                        {
+                            Console.WriteLine("Invalid input: " + e.Message);
+                        }
                         break;
 
                     case "0":
@@ -135,6 +150,19 @@ namespace Serializer
                 }
             }
             return P;
+        }
+
+        public static int TextToNumber(string raw)
+        {
+            int result;
+            if(!Int32.TryParse(raw, out result))
+            {
+                throw new Exception("Input must be numerical.");
+            }
+            else
+            {
+                return result;
+            }
         }
     }
 }
