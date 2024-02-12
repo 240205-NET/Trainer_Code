@@ -10,6 +10,12 @@ namespace School.App
         // - separate concerns (.App/.Logic)
         // - XML commenting
         // - retrieve specific person
+
+        // SQL - Database
+        // SQL - Structured Query Language
+        // It's a whole new language! It has it's own syntax, and there's many "flavors" of SQL
+        // PostgreSQL, SQLite, MS-SQL/T-SQL/Transactional-SQL
+
         {
             try
             {
