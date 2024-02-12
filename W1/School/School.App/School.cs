@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using School.Logic;
 
 namespace School.App
 {
@@ -24,6 +25,43 @@ namespace School.App
         }
 
         // Methods
+        public Student GetStudent(int studentId)
+        {
+            /* a list is indexed
+                a dictionary is not indexed, but is pairs (entries and keys)
+                you can look up an entry by the key. the Key MUST be unique within the dictionary
+            */
+            
+            // Only returns the FIRST instance that matches
+            foreach( Student s in _students)
+            {
+                if (s.studentId == studentId)
+                {
+                    return s;
+                }
+            }
+
+            return new Student();
+
+            /*
+            // returns ALL possible instances that match
+            List<Student> result = new List<Student>();
+            foreach( Student s in _students)
+            {
+                if (s.studentId == studentId)
+                {
+                    result.Add(s);
+                }
+            }
+            return result;
+            */
+
+            // List.IndexOf() - searches the list and returns the index of the entry that matches the object sent as a parameter.
+            // this method would require a not-insignificant rewrite of our Student class.
+
+            // LINQ (Lin-Que) is all about sorting and filtering
+        }
+
         public List<Student> GetStudents()
         {
             return _students;

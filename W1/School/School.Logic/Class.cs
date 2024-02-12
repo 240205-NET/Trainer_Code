@@ -1,8 +1,14 @@
 using System;
 
-namespace School.App
+namespace School.Logic
 {
-    class Class
+    /* Access Modifiers
+    - public
+    - private 
+    - protected
+    - internal
+    */
+    public class Class
     {
         // Fields
         int Id;

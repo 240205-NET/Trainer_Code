@@ -1,8 +1,8 @@
 using System;
 
-namespace School.App
+namespace School.Logic
 {
-    class Course
+    public  class Course
     {
         // Fields
         public string Id;
@@ -13,6 +13,13 @@ namespace School.App
         private static int idSeed = 1;
 
         // Constructors
+
+        /// <summary>
+        /// Constructor method for the Course object type.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="department"></param>
+        /// <param name="creditHours"></param>
         public Course(string name, string department, int creditHours)
         {
             this.name = name;

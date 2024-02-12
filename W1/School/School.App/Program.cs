@@ -11,21 +11,22 @@ namespace School.App
         // - XML commenting
         // - retrieve specific person
         {
-            Console.WriteLine("School Starting...");
             try
             {
+                Console.WriteLine("School Starting...");
+
                 School MySchool = new School();
                 // Student tmp = MySchool.GetStudent();
                 // Console.WriteLine(tmp.name);
                 Console.WriteLine(MySchool.GetStudentsInfo());
                 Console.WriteLine(MySchool.GetTeachersInfo());
+
+                Console.WriteLine("Schoold Ending...");
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
-
-            Console.WriteLine("Schoold Ending...");
         }
     }
 }

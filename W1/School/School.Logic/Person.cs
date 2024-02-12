@@ -1,13 +1,13 @@
 using System;
 
-namespace School.App
+namespace School.Logic
 {
-    abstract class Person
+    public abstract class Person
     {
         // Fields
 
         // Playing with auto-proerties
-        public string name { get; set; }
+        public string? name { get; set; }
 
         /* btw, C# has multi-line commenting, we start it and finish it, and do not have to mark each line in between
         See? no comment marking, but this is still a comment. Cool, huh?
@@ -47,12 +47,12 @@ namespace School.App
         // Person.getEmail();
         // Person.setEmail(email);
 
-        public string email;
-        public string address1;
-        public string address2;
-        public string city;
-        public string state;
-        public string zip;
+        public string? email;
+        public string? address1;
+        public string? address2;
+        public string? city;
+        public string? state;
+        public string? zip;
 
         // No need for a constructor! 
         // It's abstract you can't build one, so we don't need to define how to build one!

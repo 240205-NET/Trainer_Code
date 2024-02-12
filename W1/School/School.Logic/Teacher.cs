@@ -1,8 +1,8 @@
 using System;
 
-namespace School.App
+namespace School.Logic
 {
-    class Teacher : Person
+    public class Teacher : Person
     {          
         // Fields
         public int office { get; set; }
