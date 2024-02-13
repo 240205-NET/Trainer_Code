@@ -133,4 +133,25 @@ GO
 
 
 -- JOINS
+SELECT NAME
+    FROM [School].[Pokemon];
+
+SELECT *
+    FROM [School].[PokemonType];
+
+SELECT *
+    FROM [School].[Type];
+
+SELECT *
+    FROM [School].[Pokemon]
+    WHERE Name = 'Charizard';
+
+SELECT pt.Id, p.Name AS 'Pokemon Name', t.Name AS 'Pokemon Type'
+    FROM [School].[PokemonType] AS pt 
+    JOIN [School].[Pokemon] AS p
+        ON pt.PokemonId = p.Id
+    JOIN [School].[Type] AS t
+        ON pt.TypeId = t.Id
+    WHERE p.Name = 'Charizard';
+
 -- CHINOOK
