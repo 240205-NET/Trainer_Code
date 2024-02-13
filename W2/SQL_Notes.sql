@@ -52,7 +52,10 @@ GO
 
 /* DROP STATEMENTS ////////////////////////////////////////////
 //////////////////////////////////////////////////////////// */
+-- DROP TABLE [School].[PokemonType];
 -- DROP TABLE [School].[Pokemon];
+-- DROP TABLE [School].[Type];
+-- DROP SCHEMA [School];
 -- GO
 
 
