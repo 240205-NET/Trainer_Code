@@ -9,7 +9,27 @@ namespace SQLDemo
         {
             Console.WriteLine("SQL Demo Running...");
 
-            string connectionString = ;
+            // HIDE your connection strings
+            // The method you use may be determined by the architecture of your application, but no matter what 
+            // DO SOMETHING WITH IT!
+                // put them in a file OUTSIDE of the repo
+                // put them in a file INSIDE the repo, AND .gitignore the file
+                // "dotenv" or other environment files can be used to establish Environment Variables, and then .gitignore the environment files
+                // user secrets (in Visual Studio) can be used to hide user secrets
+                // When using cloud resources we can use a Key Vault
+
+
+            // in development, the resources will genreally be local, or for testing
+            // in production, we have the "real deal"
+                // we can read the type of build .NET has performed by using the Environment.IsDevelopment() method
+
+            string path = "./../../.connectionString.txt";
+
+            string connectionString = File.ReadAllText(path);
+
+    // DEBUG ONLY
+    //        Console.WriteLine(connectionString);
+    // REMOVE FOR PRODUCTION
 
             using SqlConnection connection = new SqlConnection(connectionString);
             try
