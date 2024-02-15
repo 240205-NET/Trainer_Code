@@ -12,12 +12,11 @@ namespace School.App
         private List<Teacher> _teachers;
         private List<Course> _courses;
         private List<Class> _classes;
-
-        private SqlRepository _repo;
+        private IRepository _repo;
 
         
         // Constructor
-        public School(SqlRepository repo)
+        public School(IRepository repo)
         {
             this._repo = repo;
             this._students = new List<Student>();
@@ -34,6 +33,18 @@ namespace School.App
         {
             this._students = _repo.GetAllStudents();
         }
+        public string GetAndDisplayOneStudent(int studentId)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            Student retrievedStudent = _repo.GetStudentById(studentId);
+            Console.WriteLine("In GetAndDisplayOneStudent");
+            Console.WriteLine(retrievedStudent);
+
+            sb.AppendLine(retrievedStudent.ToString());
+            return sb.ToString();
+        }
+
         public Student GetStudent(int studentId)
         {
             /*

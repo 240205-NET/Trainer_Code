@@ -23,14 +23,18 @@ namespace School.App
                 Console.WriteLine("School Starting...");
 
                 string connectionString = File.ReadAllText("./../../../.connectionString");
-                SqlRepository repo = new SqlRepository(connectionString);
+                IRepository repo = new SqlRepository(connectionString);
 
                 School MySchool = new School(repo);
                 // Student tmp = MySchool.GetStudent();
                 // Console.WriteLine(tmp.name);
-                MySchool.RetrieveStudents();
+                // MySchool.RetrieveStudents();
 
-                Console.WriteLine(MySchool.GetStudentsInfo());
+                // Console.WriteLine(MySchool.GetStudentsInfo());
+
+                Console.WriteLine("In Program Main");
+                Console.WriteLine(MySchool.GetAndDisplayOneStudent(1));
+
                 Console.WriteLine(MySchool.GetTeachersInfo());
 
                 Console.WriteLine("Schoold Ending...");

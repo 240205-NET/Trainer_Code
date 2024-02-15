@@ -58,6 +58,6 @@ namespace School.Logic
         // It's abstract you can't build one, so we don't need to define how to build one!
 
         // Methods
-        public abstract string ToString();
+        //public abstract string ToString();
     }
 }

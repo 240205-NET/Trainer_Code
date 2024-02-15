@@ -5,7 +5,7 @@ using System.Text;
 
 namespace School.Data
 {
-    public class SqlRepository
+    public class SqlRepository : IRepository
     {
 
         // Fields
@@ -47,6 +47,40 @@ namespace School.Data
             connection.Close();
             return students;            
         }
+
+        public Student GetStudentById(int id)
+        {     
+            using SqlConnection connection = new SqlConnection(this._connectionString);
+            connection.Open();
+
+            string cmdText = "SELECT * From [School].[Students] WHERE Id = @id;";
+
+            using SqlCommand cmd = new SqlCommand(cmdText, connection);
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            using SqlDataReader reader = cmd.ExecuteReader();
+            Student tmpstudent = new Student();
+
+            while (reader.Read())
+            {
+                int Id = (int)reader["Id"];
+                string name = reader["Name"].ToString() ?? "";
+                string email = reader["Email"].ToString() ?? "";
+                string address1 = reader["Address1"].ToString() ?? "";
+                string address2 = reader["Address2"].ToString() ?? "";
+                string city = reader["City"].ToString() ?? "";
+                string state = reader["State"].ToString()?? "";
+                string zip = reader["Zip"].ToString();
+                object gpa_d = reader["GPA"];
+
+                double gpa = System.Convert.ToDouble(gpa_d);
+                tmpstudent = new Student(Id, name, email, address1, address2, city, state, zip, gpa);
+            }
+            connection.Close();
+            return tmpstudent;            
+        }
+
 
         public string MichaelsGetTeachersInfo()
         {
