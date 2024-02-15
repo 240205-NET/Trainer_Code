@@ -1,4 +1,5 @@
 ﻿using System;
+using School.Data;
 
 namespace School.App
 {
@@ -21,9 +22,14 @@ namespace School.App
             {
                 Console.WriteLine("School Starting...");
 
-                School MySchool = new School();
+                string connectionString = File.ReadAllText("./../../../.connectionString");
+                SqlRepository repo = new SqlRepository(connectionString);
+
+                School MySchool = new School(repo);
                 // Student tmp = MySchool.GetStudent();
                 // Console.WriteLine(tmp.name);
+                MySchool.RetrieveStudents();
+
                 Console.WriteLine(MySchool.GetStudentsInfo());
                 Console.WriteLine(MySchool.GetTeachersInfo());
 
@@ -33,8 +39,6 @@ namespace School.App
             {
                 Console.WriteLine(e.Message);
             }
-        }
-
-        
+        }       
     }
 }

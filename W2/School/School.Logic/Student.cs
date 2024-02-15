@@ -12,7 +12,18 @@ namespace School.Logic
         // Constructor
         public Student()
         {}
-        
+        public Student( int id, string name, string email, string address1, string address2, string city, string state, string zip, double gpa = 0.0)
+        {
+            this.studentId = id;
+            this.name = name;
+            this.email = email;
+            this.address1 = address1;
+            this.address2 = address2;
+            this.city = city;
+            this.state = state;
+            this.zip = zip;
+            this.gpa = gpa;
+        }
         public Student( string name, string email, string address1, string address2, string city, string state, string zip)
         {
             this.studentId = idSeed;

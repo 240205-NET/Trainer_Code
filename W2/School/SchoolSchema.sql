@@ -76,3 +76,21 @@ GO
 --    1    ->    M
 --    M    ->    1
 --    M    ->    M
+
+INSERT INTO [School].[Students]
+(
+    Id, -- UNIQUE and NOT NULL
+    Name,
+    Email,
+    Address1,
+    Address2,
+    City,
+    State,
+    Zip,
+    GPA 
+) 
+VALUES
+(1, 'Lawrence', 'lawrence@gmail.com', 'address1', 'address2', 'city1', 'CA', '09876', 4.0),
+(2, 'Meryem', 'Meryem@gmail.com', 'address3', 'address4', 'city2', 'MI', '34567', 4.1);
+
+
