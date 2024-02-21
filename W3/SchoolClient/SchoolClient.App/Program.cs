@@ -28,21 +28,22 @@ namespace SchoolClient.App
                 0: Exit");
                 string selection = Console.ReadLine();
 
+                string tmpuri = "";
                 switch (selection)
                 {
                     case "1":
-                        uri = uri + "/api/Student";
-                        Console.WriteLine(uri);
-                        Console.WriteLine(await ListAllStudentsAsync(uri));
+                        tmpuri = uri + "/api/Student";
+                        Console.WriteLine(tmpuri);
+                        Console.WriteLine(await ListAllStudentsAsync(tmpuri));
                         break;
                     
                     case "2":
                         int id;
                         Console.WriteLine("Enter the student id #: ");
                         Int32.TryParse(Console.ReadLine(), out id);
-                        uri = uri + "/api/Student/" + id;
-                        Console.WriteLine(uri);
-                        Console.WriteLine(await ListStudentByIdAsync(uri));
+                        tmpuri = uri + "/api/Student/" + id;
+                        Console.WriteLine(tmpuri);
+                        Console.WriteLine(await ListStudentByIdAsync(tmpuri));
                         break;
 
                     case "0":

@@ -59,17 +59,17 @@ namespace School.API.Controllers
 
         // POST api/<StudentController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Student value)
         {
         }
 
-        // PUT api/<StudentController>/5
+        // PUT api/<StudentController>/{id}
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Student value)
         {
         }
 
-        // DELETE api/<StudentController>/5
+        // DELETE api/<StudentController>/{id}
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
