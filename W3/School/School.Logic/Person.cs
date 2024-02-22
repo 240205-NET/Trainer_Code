@@ -7,7 +7,7 @@ namespace School.Logic
         // Fields
 
         // Playing with auto-proerties
-        public string? name { get; set; }
+        public string? name { get; set; } = string.Empty;
 
         /* btw, C# has multi-line commenting, we start it and finish it, and do not have to mark each line in between
         See? no comment marking, but this is still a comment. Cool, huh?
@@ -47,12 +47,13 @@ namespace School.Logic
         // Person.getEmail();
         // Person.setEmail(email);
 
-        public string? email;
-        public string? address1;
-        public string? address2;
-        public string? city;
-        public string? state;
-        public string? zip;
+        public string? email { get; set; } = string.Empty;
+        public string? address1 { get; set; } = string.Empty;
+        public string? address2 { get; set; } = string.Empty;
+        public string? city { get; set; } = string.Empty;
+        public string? state { get; set; } = string.Empty;
+        public string? zip { get; set; } = string.Empty;
+
 
         // No need for a constructor! 
         // It's abstract you can't build one, so we don't need to define how to build one!

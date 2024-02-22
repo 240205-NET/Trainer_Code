@@ -59,8 +59,19 @@ namespace School.API.Controllers
 
         // POST api/<StudentController>
         [HttpPost]
-        public void Post([FromBody] Student value)
+        public async Task<ActionResult> PostNewStudentAsync([FromBody] Student value)
         {
+            Student newstudent = value;
+            try
+            {
+                await _repo.EnterNewStudentAsync(newstudent);
+            }
+            catch(Exception e)
+            {
+                _logger.LogError(e, e.Message);
+                return StatusCode(500);
+            }
+            return StatusCode(200);
         }
 
         // PUT api/<StudentController>/{id}
@@ -71,8 +82,18 @@ namespace School.API.Controllers
 
         // DELETE api/<StudentController>/{id}
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<ActionResult> DeleteStudetByIdAsync(int id)
         {
+            try
+            {
+                await _repo.DeleteStudentByIdAsync(id);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, e.Message);
+                return StatusCode(500);
+            }
+            return StatusCode(200);
         }
     }
 }

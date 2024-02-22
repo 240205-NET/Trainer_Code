@@ -11,12 +11,12 @@ namespace SchoolClient.App
         {
             Console.WriteLine("SchoolClient Starting...");
 
-            string host = "https://localhost:";
-            int port;
+            string uri = "https://hawkins-240205-schoolapi.azurewebsites.net";
+            // int port;
 
-            Console.WriteLine("Enter the portnumber for the locally running api: ");
-            Int32.TryParse(Console.ReadLine(), out port);
-            string uri = host + port;
+            // Console.WriteLine("Enter the portnumber for the locally running api: ");
+            // Int32.TryParse(Console.ReadLine(), out port);
+            // string uri = host + port;
             Console.WriteLine(uri);
 
             bool loop = true;
