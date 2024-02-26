@@ -94,3 +94,6 @@ VALUES
 (2, 'Meryem', 'Meryem@gmail.com', 'address3', 'address4', 'city2', 'MI', '34567', 4.1);
 
 
+
+
+SELECT * FROM [dbo].[Customer];
