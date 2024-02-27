@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* internal css */
+        /* tag selector */
+        li {
+            list-style: none;
+        }
+        /* class selector */
+        .green {
+            color: green;
+        }
+        /* id selector */
+        #img-4 {
+            height: 50pt;
+        }
+    </style>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        Semantic Element
+        Put stuff like Brand, Nav bar, pretty logo
+        <nav>
+            <ul id="nav-bar">
+                <li>
+                    <a target="_blank" href="https://stackoverflow.com/">Ask StackOverflow</a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://chat.openai.com">Ask ChatGPT</a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://google.com">Ask Google</a>
+                </li>
+                <li>
+                    <a href="#img-4">Jumpe to the last image</a>
+                </li>
+                <li>
+                    <a href="./another_page.html">To another page</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- inline style -->
+    <h1 style="color: green">Hello, World!</h1>
+    <div id="box-model">I am a box</div>
+    <img src="./debugging_at_4am.png" alt="A dev going insane at 4am debugging before the project demo">
+    <img src="./debugging_at_4am.png" alt="A dev going insane at 4am debugging before the project demo">
+    <img src="./debugging_at_4am.png" alt="A dev going insane at 4am debugging before the project demo">
+    <img src="./debugging_at_4am.png" alt="A dev going insane at 4am debugging before the project demo">
+    <img src="./debugging_at_4am.png" alt="A dev going insane at 4am debugging before the project demo">
+    <img src="./debugging_at_4am.png" alt="A dev going insane at 4am debugging before the project demo">
+    <img class=" " id="img-4" src="./debugging_at_4am.png" alt="A dev going insane at 4am debugging before the project demo">
+
+    <footer>
+
+    </footer>
+</body>
+</html>

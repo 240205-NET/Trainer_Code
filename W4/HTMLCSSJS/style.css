@@ -1,0 +1,21 @@
+/* external css */
+
+ /* #nav-bar {
+
+        } */
+nav > ul {
+    display: flex;
+}
+nav > ul > li:not(:first-child) {
+    margin-left: 10pt;
+    /* color: red; */
+}
+
+#box-model {
+    border: solid 2pt black;
+    padding: 5pt 10pt;
+    padding-top: 30pt;
+    margin: 5pt;
+    background-color: #6acbcb;
+    /* color: rgba(red, green, blue, alpha) */
+}
