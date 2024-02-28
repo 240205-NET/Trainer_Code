@@ -34,11 +34,11 @@
         <form class="col-lg-8 col-md-12" name="addPlantForm" id="add-plant-form" onsubmit="addNewPlant(event)">
             <div class="form-group">
               <label for="s-name">Scientific Name<span class="color-red">*</span></label>
-              <input class="form-control"  type="text" name="scientificName" id="s-name">
+              <input class="form-control" type="text" maxlength="256" name="scientificName" id="s-name" required>
             </div>
             <div class="form-group">
               <label for="c-name">Common Name<span class="color-red">*</span></label>
-              <input class="form-control" type="text" name="commonName" id="c-name">
+              <input class="form-control" type="text" maxlength="256" name="commonName" id="c-name" required>
             </div>
             <div class="form-group">
               <label for="zone">Zone</label>
@@ -47,12 +47,12 @@
             <div class="form-group">
               <label for="size">Size</label>
               <select class="form-control" name="size" id="size">
-                <option value="Extra Small">Extra Small</option>
-                <option value="Small">Small</option>
-                <option value="Medium">Medium</option>
-                <option value="Large">Large</option>
-                <option value="Extra Large">Extra Large</option>
-                <option value="Giant">Giant</option>
+                <option value="0">Extra Small</option>
+                <option value="1">Small</option>
+                <option value="2">Medium</option>
+                <option value="3">Large</option>
+                <option value="4">Extra Large</option>
+                <option value="5">Giant</option>
               </select>
             </div>
             <div class="form-group">
