@@ -1,0 +1,23 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+.bg {
+    position: relative;
+    height: 100%;
+}
+.bg::before {
+    /* The image used */
+    background-image: url("./garden_backdrop.jpg");
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.15;
+}

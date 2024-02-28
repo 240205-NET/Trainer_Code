@@ -106,5 +106,23 @@ namespace TheGarden.DL
             _logger.LogInformation("Executed GetPlantByIdAsync.");
             return newLeafyBoi;
         }
+
+        public async Task DeletePlantByIdAsync(int id)
+        {
+            using SqlConnection connection = new SqlConnection(_connectionString);
+
+            await connection.OpenAsync();
+
+            string cmdText = "DELETE FROM [Garden].[Plants] WHERE PlantID = @id;";
+
+            using SqlCommand cmd = new SqlCommand(cmdText, connection);
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            using SqlDataReader reader = await cmd.ExecuteReaderAsync();
+
+            await connection.CloseAsync();
+            _logger.LogInformation($"Executed DeletePlantByIdAsnyc and deleted the plant id: {id}.");
+        }
     }
 }

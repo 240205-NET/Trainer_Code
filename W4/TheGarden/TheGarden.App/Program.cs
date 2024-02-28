@@ -14,6 +14,15 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IRepository>(sp => new SqlRepository(connectionString, sp.GetRequiredService<ILogger<SqlRepository>>()));
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "allow_all_origins",
+                      policy  =>
+                      {
+                          policy.WithOrigins("*");
+                      });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -24,6 +33,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors("allow_all_origins");
 
 app.UseAuthorization();
 
