@@ -6,7 +6,7 @@ body, html {
 .bg {
     position: relative;
     height: 100%;
-}
+} 
 .bg::before {
     /* The image used */
     background-image: url("./garden_backdrop.jpg");
@@ -16,8 +16,11 @@ body, html {
     right: 0px;
     bottom: 0px;
     left: 0px;
-
+    z-index: -1;
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 0.15;
+}
+.color-red {
+    color: red;
 }
