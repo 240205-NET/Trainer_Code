@@ -1,24 +1,24 @@
 # TEAMS
 
-## Team 1
+## Team 1 - The Recepie Finder
 - Nima
 - Michael
 - Abdelhalim
 - Christian
 
-# Team Green
+# Team Green - Toast
 - Matthew
 - Lawrence
 - Visshal
 - Meryem
 
-# Team Oak
+# Team Oak - Book Management
 - Arthur
 - Nabin
 - Hemanta
 - Jessirae
 
-# Team Omega
+# Team Omega - Fantasy Travel
 - James
 - Russell
 - Ian
