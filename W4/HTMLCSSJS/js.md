@@ -80,3 +80,11 @@ Important because fe is nothing w/o data and we get that data via http call, asy
 - Peculiarities:
   - Keys Must be "string"
   - No trailing comma
+
+### The infamous `this` keyword
+- The issue with `this` in js is that it changes meaning based on context.
+- [Official MDN doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
+- there are a lot of different context/nuances one could delve themselves into, but here are two pertinent ones to know
+  - Inside classes/constructors, `this` works the same way as C#. As in, `this` in constructors and instance fields/methods refers to the object, for static fields/methods it's the class itself
+  - For event listeners (functions bound to certain events), `this` is the event
+- You can change the `this` context by using `.call()`, `.apply()` or `.bind()` method
