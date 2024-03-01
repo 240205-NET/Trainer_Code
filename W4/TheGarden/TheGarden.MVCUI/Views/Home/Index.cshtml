@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<TheGarden.BL.Plant>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <th>Plant ID</th>
+        <th>Scientific Name</th>
+        <th>Common Name</th>
+        <th>Zone</th>
+        <th>Size</th>
+        <th>Adoption Date</th>
+    </thead>
+    <tbody>
+        @foreach(var plant in Model) {
+            <tr>
+                <td>@plant.PlantID</td>
+                <td>@plant.ScientificName</td>
+                <td>@plant.CommonName</td>
+                <td>@plant.Zone</td>
+                <td>@plant.Size</td>
+                <td>@plant.AdoptionDate</td>
+            </tr>
+        }
+    </tbody>
+</table>
