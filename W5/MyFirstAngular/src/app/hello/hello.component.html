@@ -1,0 +1,18 @@
+<p>hello works!</p>
+<p>String Interpolation: {{isTrue}}</p>
+
+<div *ngIf="isTrue">
+    isTrue is true
+</div>
+<button (click)="negateIsTrue()">
+    Negate isTrue
+</button>
+{{pets}}
+<button (click)="negateShowPets()" [class]="attrBinding">
+    Show Pets
+</button>
+<div *ngIf="showPets">
+    <div *ngFor="let name of pets">
+        The pet's name is: {{name}}
+    </div>
+</div>
