@@ -56,11 +56,11 @@
 -- you can use functions in stored procedures
 -- but you can't use stored procedures in functions
 
-CREATE Procedure sp_allCustomers
-AS
-SELECT * FROM Customer
+-- CREATE Procedure sp_allCustomers
+-- AS
+-- SELECT * FROM Customer
 
-exec dbo.sp_allCustomers;
+-- exec dbo.sp_allCustomers;
 
 -- Stored procedure with input parameter
 -- CREATE Procedure sp_filterCustomerbyFirstName @fname nvarchar(50)
