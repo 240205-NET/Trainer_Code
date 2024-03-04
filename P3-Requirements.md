@@ -23,10 +23,10 @@
 - Stephen
 
 ## Format
-- As a team, you will choose 1(or both!) of the other 2 teams P2 project.
+- As a team, you will choose 1(or both!) of the other teams P2 project.
   - Team A will choose between Team Green's or Team Omega's P2 project and Team B will choose between Team 1's or Team Oak's project.
 - You'll incorporate the chosen project's API into your own project
-  - The way you go about it is up to you. You can take the code base and build upon that project's backend, or you can use it as a part of your new application you build.
+  - The way you go about it is up to you. You can take the code base and build upon the project, or you can use it as a part of your new application you build.
 
 ## Requirements
 - Angular Frontend
