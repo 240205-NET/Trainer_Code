@@ -1,0 +1,19 @@
+<h1>All Tracks</h1>
+<table>
+    <thead>
+        <th>ID</th>
+        <th>Artist Name</th>
+        <th>Track Name</th>
+        <th>Genre</th>
+        <th>Track Length</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let track of tracks">
+            <td [ngClass]="{'red': track.trackId === 1, 'green': track.trackId && track.trackId > 1}">{{track.trackId ?? "n/a"}}</td>
+            <td>{{track.artistName}}</td>
+            <td>{{track.trackName}}</td>
+            <td>{{track.genre}}</td>
+            <td>{{track.trackLength}}</td>
+        </tr>
+    </tbody>
+</table>

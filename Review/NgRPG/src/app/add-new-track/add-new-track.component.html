@@ -1,0 +1,23 @@
+<form (submit)="submitForm()" [formGroup]="newTrackForm">
+    <div>
+        <label for="trackId">Track Id</label>
+        <input id="trackId" name="trackId" type="number" formControlName="trackId">
+    </div>
+    <div>
+        <label for="artistName">Artist Name</label>
+        <input id="artistName" name="artistName" type="text">
+    </div>
+    <div>
+        <label for="trackName">Track Name</label>
+        <input id="trackName" name="trackName" type="text">
+    </div>
+    <div>
+        <label for="genre">Genre</label>
+        <input id="genre" name="genre" type="text">
+    </div>
+    <div>
+        <label for="trackLength">trackLength</label>
+        <input id="trackLength" name="trackLength" type="text" pattern="([0-5]?[0-9]):([0-5][0-9])" placeholder="MM:SS">
+    </div>
+    <input type="submit" class="btn btn-success" value="Submit">
+</form>
