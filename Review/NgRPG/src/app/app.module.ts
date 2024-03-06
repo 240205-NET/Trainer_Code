@@ -7,12 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { TracksComponent } from './tracks/tracks.component';
 import { AddNewTrackComponent } from './add-new-track/add-new-track.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TracksComponent,
-    AddNewTrackComponent
+    AddNewTrackComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
