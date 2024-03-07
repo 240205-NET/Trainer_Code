@@ -8,7 +8,8 @@ on:
     branches:
       - main
   workflow_dispatch:
-
+env:
+  PROJECT_ROOT: 'Review/RandomPlaylistGenerator'
 jobs:
   build:
     runs-on: windows-latest
@@ -20,13 +21,13 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '8.x'
-          include-prerelease: true
+          include-prerelease: false
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build ${{env.PROJECT_ROOT}} --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish ${{env.PROJECT_ROOT}} -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
