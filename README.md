@@ -8,4 +8,4 @@ Hi there!
 Feel free to look around, but remember, you don't get anything for free. Just copying files and hoping that they'll work, or that you can turn them in as your own work for a project is a BAD PLAN. Your trainer will know, and it will NOT go well for you. You have the entire internet, the sum total of all  human knowledge at your fingertips. Don't waste it being lazy! Just search for the topic you want to learn about, and put a little  time into learning how to do something for yourself!
 
 Good Luck!
-Richard
+Richard & Juniper
