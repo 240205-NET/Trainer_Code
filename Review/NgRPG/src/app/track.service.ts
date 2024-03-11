@@ -8,16 +8,17 @@ import { Track } from '../models/Track'
 })
 export class TrackService {
   userIsLoggedIn = new Subject<Boolean>()
+  apiRoot = 'https://randomplaylistgenerator.azurewebsites.net/'
 
   // In here, you ask for dependencies you need 
   constructor(private http: HttpClient) { }
 
   getAllTracks() : Observable<Track[]> {
-    return this.http.get('http://localhost:5294/tracks') as Observable<Track[]>
+    return this.http.get(this.apiRoot + 'tracks') as Observable<Track[]>
   }
 
   createNewTrack(data: Track): Observable<Object> {
-    return this.http.post('http://localhost:5294/track', data)
+    return this.http.post(this.apiRoot + 'track', data)
   }
 
   formatTimeLength(timespan : string) : string {
