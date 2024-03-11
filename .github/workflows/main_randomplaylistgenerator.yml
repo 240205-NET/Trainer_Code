@@ -8,8 +8,7 @@ on:
     branches:
       - main
   workflow_dispatch:
-env:
-  PROJECT_ROOT: 'Review/RandomPlaylistGenerator'
+
 jobs:
   build:
     runs-on: windows-latest
@@ -21,13 +20,13 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '8.x'
-          include-prerelease: false
+          include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build ${{env.PROJECT_ROOT}} --configuration Release
+        run: dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish ${{env.PROJECT_ROOT}} -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
@@ -55,4 +54,4 @@ jobs:
           app-name: 'randomplaylistgenerator'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_03149CEFE0E6403E9F753505C186418C }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_84B1E328F11C4F549FE63B94F4C57CD7 }}
