@@ -33,4 +33,4 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal ${{env.WORKING_DIR}}
     - name: Use Secret
-      run: echo ${{secret.SUPER_SECRET_KEY}}
+      run: echo ${{secrets.SUPER_SECRET_KEY}}
