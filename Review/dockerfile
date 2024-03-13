@@ -1,0 +1,19 @@
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS BUILD
+# Get ourselves .NET 8.0 SDK from docker hub
+
+# declare work directory, where all your subsequent ADD, COPY, CMD, ENTRYPOINT, or RUN etc commands will run
+WORKDIR /app
+
+# Copies files/folders from source to destination
+COPY Models ./Models
+COPY RandomPlaylistGenerator ./RandomPlaylistGenerator 
+
+RUN dotnet publish RandomPlaylistGenerator -o dist
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS RUN
+
+WORKDIR /app
+
+COPY --from=BUILD /app/dist .
+
+CMD ["dotnet", "RandomPlaylistGenerator.dll"]
