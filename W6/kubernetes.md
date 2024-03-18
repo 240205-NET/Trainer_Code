@@ -18,13 +18,13 @@
 Think of K8's as a department manager. Each department has multiple teams, each concerned about different functions in the department. The teams in the department have a team lead that reports to department manager.
 - Cluster: The department (manager, teams, team leads, team members, etc.)
 - Control Plane: your dept manager office
-- Pod: Is your team member (this is your tiny microservice, they are containers)
+- Pod: Is your team member (this is your smallest unit in k8's cluster, they hold 1+ containers)
 - Node: Is team office (this is a machine that pods live. A node can have 1+ pods)
 - Kubectl: is CLI tool to interact with a K8's cluster
 - Kubelet: is your team lead. Kubelet lives in the node, and communicates with control plane
 - Ingress: Sales team, it's a technology that allows external traffic to this cluster
 - Service: managment tools: logical grouping of pods
-- Deployment: management tools: logical grouping of services and replica sets, etc.
+- Deployment: management tools: logical grouping of replica sets + deployment strategy.
 - ... and more
 
 ## Resources
