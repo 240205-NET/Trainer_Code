@@ -26,3 +26,10 @@ Think of K8's as a department manager. Each department has multiple teams, each 
 - Service: managment tools: logical grouping of pods
 - Deployment: management tools: logical grouping of services and replica sets, etc.
 - ... and more
+
+## Resources
+- https://kubernetes.io/docs/home/
+- https://minikube.sigs.k8s.io/docs/
+- https://www.edx.org/learn/kubernetes/the-linux-foundation-introduction-to-kubernetes
+- ELI5: https://www.cncf.io/phippy/
+- https://kubernetes.io/images/docs/kubernetes-cluster-architecture.svg
