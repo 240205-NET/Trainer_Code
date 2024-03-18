@@ -15,7 +15,7 @@
   - Cons: high overhead to set up and manage
 
 ## Kubernetes: Container Orchestration Service
-Think of K8's as a department manager. Each department has multiple teams, each concerned about different functions in the department. The teams in the department have a team lead that reports to department manager.
+Think of K8's as a department. Each department has multiple teams, each concerned about different functions in the department. The teams in the department have a team lead that reports to department manager.
 - Cluster: The department (manager, teams, team leads, team members, etc.)
 - Control Plane: your dept manager office
 - Pod: Is your team member (this is your smallest unit in k8's cluster, they hold 1+ containers)
