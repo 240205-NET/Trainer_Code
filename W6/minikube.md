@@ -1,5 +1,5 @@
 # Minikube
-Minikube is a local kubernetes clutster. It's a great way to play around with K8's locally without accruing a huge bill from your cloud service provider!
+Minikube is a local kubernetes cluster. It's a great way to play around with K8's locally without accruing a huge bill from your cloud service provider!
 
 ## How to get it working on windows...
 1. Download minikube
