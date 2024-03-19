@@ -1,5 +1,17 @@
 # DevOps Competency Review
 
+## Cloud
+- What is cloud?
+- what is pros/cons of cloud vs on-prem?
+- Shared responsibility model?
+  - IAAS, PAAS, SAAS?
+  - Examples of each?
+- What is a region?
+- What are horizontal/vertical scaling?
+- What is IaC? (Infrastructure as Code)
+    - Examples?
+- What is SLA?
+
 ## CI/CD
 - What is CI?
 - What is CD?
