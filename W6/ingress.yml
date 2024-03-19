@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: rpg-ingress
+  annotations:
+    spec.ingressClassName: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    # to use regex on my paths
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    # also something about the path, rewriting the target, modifying the url
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: rpg-api-service
+                port:
+                  number: 5001

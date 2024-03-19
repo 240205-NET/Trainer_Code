@@ -13,56 +13,116 @@
 - What is SLA?
 
 ## CI/CD
-- What is CI?
+- What is CI? - Continuous Integration/Deployment. CI is cycle of develop/build/test for ic's.
 - What is CD?
-  - Two types of CD?
-- What's the purpose of CI/CD?
+  - Two types of CD? C Delivery/Deployment.
+- What's the purpose of CI/CD? allow us to have working versions of program in whichever env we need our app
+  - reduce manual work
 - describe me the process of setting up a ci(or cd) pipeline
+  - In github, we go to github actions and create a yml file, which is a work flow.
+  - Then you define how you want your application to be built and what it runs on, etc.
+  - triggers (when does it run?)
 - what is runner/agent?
+  - Runner is a server/vm which runs the jobs. Runners run a single job at a time, and if jobs are running in parallel, there are multiple runners running in parallel. Pipelines can run multiple jobs at once but if one job is dependent on another one, it needs to wait until it can execute.
 - what is job?
+  - job is a set of instructions that needs to be executed by a runner.
+  - in a job, we define things like... step-by-step instruction(location of the code, what to compile it on, where to put the compiled code)
+    - Which machine image it should run on?
+    - what's the name of this job?
+    - the job that needs to complete before it can run
+    - its own env vars
+    - ...and more
 - how do you pick which machine you want to run these commands on?
-- how do you store sensitive data?
+  - runs-on kvp defines which machine image you want 
+- how do you store sensitive data that is needed in github action?
+  - some sort of key store for general secret management
+  - github repository secrets
 - what is azure publish profile?
-
+    - xml file that contains deployment information
+    - connection string for azure resources
+  
 ## Sonar Cloud
 - why is static code analysis?
 - Why do we care about it?
+  - tool to analyze code to detect potential bugs/security vulnerabilities you might want to go over
+  - saves a lot of time 
+  - automatic code analysis tool to ensure quality code
 - what is code smell?
+  - not necessarily an error, but could be reliability issues (ie repeated code, )
+  - not violating SOLID principles
+  - maintainability
 - what is bug?
-- what is security hotspot
+  - actual coding error that can break your application
+- what is security hotspot (code that could be exploited)
+  - security sensitive pieces of code
+  - Not all bad, you just need to review to make sure.
 - what is security vulnerability?
-- How do you manually set up sonar cloud? (WITHOUT the automagic auto analysis)
+  - pieces of code that is actually vulnerable to attackers
+  - ex: exposed connection string
+- How do you set up sonar cloud in CI pipeline? (WITHOUT the automagic analysis)
     - How do you get code coverage metric in sonar cloud report?
+    - create account, generate token
+    - download sonar scanner in our CI pipeline
+    - run sonar scanner alongside with dotnet build command (With necessary configuratons)
 
 ## Docker
 - What is containerization?
-  - How is it different from virtualization?
 - What does containerization/virtualization achieve?
+  - packaging your application with your dependencies and being able to run regardless of host os
+  - How is it different from virtualization?
+    - virtualization partitians machine to different machine, more overhead, has its own os
+    - containerization runs on host os, lightweight
 - What is Docker?
+  - docker is a application that allows us to run containers and build images.
+  - Docker is a containerization platform 
 - What is docker engine?
+  - the actual software that runs container, runs all docker commands
 - What is...
-  - dockerfile
-  - .dockerignore
-  - image
-  - tag
-  - container
-  - dockerhub
+  - dockerfile: a file we write commands and operations to build a docker image
+  - .dockerignore: similar to gitignore
+  - image: an artifact which we can push to dockerhub. It's fs that contains our application and its dependencies.
+  - tag: version of docker image
+  - container: where we run our image (image + resources)
+  - dockerhub: image registry
 - how do you build docker image?
+  - create dockerfile -> instruction for building image
+  - base image (os + additional software)
+  - get dependencies
+  - build our app..
+  - once we have dockerfile, we run `docker build -t imagename:tag-name rel-path-to-dockerfile`
 - what are some docker cli commands you've used?
+  - `docker run` to run the container with an image
+  - `docker pull/push`: to pull/push from/to registry
+  - `docker ps`: to list all running containers
+  - `docker images ls`: list all docker images 
+  - `docker start/stop`: commands to start/stop existing containers
 - Tell me the process of building dockerfile
   - Base image
   - workdir
   - ...etc
-- How do you share your image with others?
+- How do you share your image with others? Dockerhub, push/pull
 
 ## Kubernetes?
-- What is MSA? how does it differ from monolith or SOA?
-  - Why do we even want to use MSA?
+- What is MSA? how does it differ from monolith or SOA (Service Oriented Architecture)?
+  - MSA is a software system that is composed of granular, self sufficient components that are de-coupled from one another (loosely coupled)
+  - SOA: If you have a auth service, BE server, db, they'd be its own component
+  - Monolith is when you have one software system that contains EVERYTHING
+- Why do we even want to use MSA?
+  - You can scale parts of the application
+  - maintainability
 - What is Kubernetes and what does it do?
+  - Platform/Tool for container *orchestration*
+  - Manages containers, coordinates the containers, handles networking inside the cluster/to outside world(aka internet), healthcheck of containers so it maintains a certain configuration (how many of certains containers etc.)
 - What is cluster?
+  - collection of containers, control plane, and vm's (nodes)
+  - Minikube (local)
+  - Azure AKS (Azure Kubernetes Service)
+  - AWS EKS (Elastic Kubernetes Service)
 - What is control plane?
-- What is Pod?
-  - Node?
-  - Kubelet?
-  - kubectl?
-  - Ingress?
+  - is what manages nodes (which are vms inside the clusters)
+  - basically the manager inside the cluster, or conductor of the orchestra
+- What is Pod? the smallest unit in cluster, can contain 1+ containers techincally, in practice, usually 1-1
+  - Node? the vm that runs pods. Nodes can have 1+ pods.
+  - Kubelet? this is your teamlead inside your worker node that communicates with control plane
+  - kubectl? CLI tool to communicate with/manage cluster. This is your interface with K8's cluster 
+  - Ingress? is the technology/tool that enables clusters to communicate with outside world (Internet)

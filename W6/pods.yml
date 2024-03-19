@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: rpg-pod
+  labels:
+    app: playlist-app
+spec:
+  containers:
+  - name: rpg-api
+    image: sminseonong/rpgapi:0.0.1
+    ports:
+    - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rpg-api-service
+spec:
+  ports:
+    - targetPort: 8080
+      port: 5001
+  selector:
+    app: playlist-app
