@@ -37,6 +37,10 @@
   - dockerhub
 - how do you build docker image?
 - what are some docker cli commands you've used?
+- Tell me the process of building dockerfile
+  - Base image
+  - workdir
+  - ...etc
 - How do you share your image with others?
 
 ## Kubernetes?
