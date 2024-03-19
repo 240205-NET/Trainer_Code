@@ -31,7 +31,7 @@
 - what is bug?
 - what is security hotspot
 - what is security vulnerability?
-- How do you manually set up sonar cloud?
+- How do you manually set up sonar cloud? (WITHOUT the automagic auto analysis)
     - How do you get code coverage metric in sonar cloud report?
 
 ## Docker
