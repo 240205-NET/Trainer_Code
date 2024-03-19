@@ -1,16 +1,26 @@
 # DevOps Competency Review
 
 ## Cloud
-- What is cloud?
-- what is pros/cons of cloud vs on-prem?
+- What is cloud? virtual service that allows us to borrow different resources that we may need. 
+- what are pros/cons of cloud vs on-prem?
+  - Pros of cloud: scalability, accessbility, economics of scale, low startup cost, security, no hardware maintenance
+    - offload large/complex calculation to more powerful machines, and the smaller clients can just display/present the result
+  - pros of on-prem: Full control of the infrastructure, security (having the data on-prem)
 - Shared responsibility model?
-  - IAAS, PAAS, SAAS?
+  - IAAS : Infrastructure as a service, use vm/hardware/server on cloud, Azure Virtual Machines
+  - PAAS : Platform as a service, using os or platform/runtime on cloud, Azure SQL Server, App Services (web app, static app, etc)
+  - SAAS : Software as a service, using software on cloud, Google Drive, Gmail, Office365 web, Youtube
   - Examples of each?
-- What is a region?
+- What is a region? area in which you deploy your cloud resources. It's a geographical grouping of data centers
 - What are horizontal/vertical scaling?
-- What is IaC? (Infrastructure as Code)
-    - Examples?
-- What is SLA?
+  - Verical: adding additional resources to existing resources (more RAM! More CPU cores!)
+  - Horizontal: adding additional instances to existing infra (more VM's)
+  - horizontal tends to be cheaper
+- What is IaC? (Infrastructure as Code): When you use code that defines system configuration
+  - It's a lego instruction to how to build your lego set
+  - Examples? ARM (Azure Resource Manager) templates, Bicep (azure's newer iac), Terraform, 
+- What is SLA? Service Level Agreement
+  - different promises for uptime, agreement between the provider and the customer.
 
 ## CI/CD
 - What is CI? - Continuous Integration/Deployment. CI is cycle of develop/build/test for ic's.
